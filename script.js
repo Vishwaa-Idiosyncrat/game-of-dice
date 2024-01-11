@@ -73,6 +73,7 @@ btnHold.addEventListener('click', function () {
     scores[activePlayer] += currentScore;
     document.querySelector(`#score--${activePlayer}`).textContent =
       scores[activePlayer];
+    currentScore = 0;
     checkScore();
     if (playing) {
       switchPlayer();
@@ -84,6 +85,12 @@ btnNew.addEventListener('click', init);
 
 function checkScore() {
   if (scores[activePlayer] + currentScore >= 100) {
+    scores[activePlayer] += currentScore;
+    document.querySelector(`#score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    currentScore = 0;
+    document.querySelector(`#current--${activePlayer}`).textContent =
+      currentScore;
     playing = false;
     document
       .querySelector(`.player--${activePlayer}`)
