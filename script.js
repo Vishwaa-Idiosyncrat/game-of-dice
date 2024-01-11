@@ -15,7 +15,7 @@ let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
 
-function initial() {
+function init() {
   score0El.textContent = 0;
   score1El.textContent = 0;
   current0El.textContent = 0;
@@ -80,7 +80,7 @@ btnHold.addEventListener('click', function () {
   }
 });
 
-btnNew.addEventListener('click', initial);
+btnNew.addEventListener('click', init);
 
 function checkScore() {
   if (scores[activePlayer] + currentScore >= 100) {
